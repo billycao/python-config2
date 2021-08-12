@@ -146,6 +146,8 @@ class Config(AttributeDict):
 
         path = os.path.abspath(path)
 
+        path = os.getenv('PYTHON_CONFIG_DIR') or path
+
         if detect:
             if isinstance(detect, string_types):
                 detect_root_pattern = detect
